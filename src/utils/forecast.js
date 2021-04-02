@@ -7,7 +7,10 @@ request({url,json:true},(err,{body}) => {
   } else if(body.error){
     callback('try another location',undefined)
   }else{
-    callback(undefined,`currently the temp is ${body.current.temperature} and it feels like ${body.current.feelslike}`)
+    callback(undefined,`currently the temp is ${body.current.temperature} and it feels like ${body.current.feelslike}.
+The wind speed is ${body.current.wind_speed} .
+Humidity is ${body.current.humidity} and uv index is ${body.current.uv_index}.
+      `)
   }
 })
 }
